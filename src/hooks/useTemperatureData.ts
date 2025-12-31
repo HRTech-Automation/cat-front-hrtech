@@ -88,7 +88,7 @@ export function useTemperatureData() {
       setSensors(initialSensors);
       setRecentData(initialRecentData);
       setExtendedData(initialExtendedData);
-      setSelectedSensorId(mockSensors[0].id); // Selecionar primeiro sensor por padrão
+      setSelectedSensorId(null); // Não selecionar nenhum sensor por padrão
       setIsLoading(false);
     };
 

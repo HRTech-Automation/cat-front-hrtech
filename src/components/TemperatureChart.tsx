@@ -41,8 +41,8 @@ export default function TemperatureChart({ data, title, height = 300 }: Temperat
   };
 
   return (
-    <div className="bg-gray-900 border border-gray-800 rounded-lg p-[1vh] h-full flex flex-col">
-      <h3 className="font-semibold text-white mb-[1vh] flex-shrink-0 text-[1.2vw] lg:text-[1vw] xl:text-[0.8vw]">{title}</h3>
+    <div className="bg-gray-900 border border-gray-800 rounded-lg p-[0.3vh] h-full flex flex-col">
+      <h3 className="font-semibold text-white mb-[0.2vh] flex-shrink-0 text-[1.2vw] lg:text-[1vw] xl:text-[0.8vw]">{title}</h3>
       <div className="flex-1 min-h-0">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={chartData}>
@@ -56,7 +56,7 @@ export default function TemperatureChart({ data, title, height = 300 }: Temperat
             <YAxis 
               stroke="#9ca3af"
               fontSize="0.6vw"
-              domain={[-20, 5]}
+              domain={[-18, 0]}
               tickFormatter={(value) => `${value}°C`}
             />
             <Tooltip content={<CustomTooltip />} />
@@ -71,24 +71,24 @@ export default function TemperatureChart({ data, title, height = 300 }: Temperat
               dataKey="temperature" 
               stroke="#8b5cf6" 
               strokeWidth={2}
-              dot={{ fill: '#8b5cf6', strokeWidth: 1, r: 1 }}
-              activeDot={{ r: 3, stroke: '#8b5cf6', strokeWidth: 2, fill: '#a78bfa' }}
+              dot={{ fill: '#8b5cf6', strokeWidth: 1, r: 2 }}
+              activeDot={{ r: 4, stroke: '#8b5cf6', strokeWidth: 2, fill: '#a78bfa' }}
             />
           </LineChart>
         </ResponsiveContainer>
       </div>
       
-      <div className="mt-[0.5vh] flex justify-center gap-[1vw] text-gray-400 flex-shrink-0 text-[0.8vw] lg:text-[0.6vw] xl:text-[0.5vw]">
+      <div className="flex justify-center gap-[0.4vw] text-gray-400 flex-shrink-0 text-[0.8vw] lg:text-[0.6vw] xl:text-[0.5vw]">
         <div className="flex items-center gap-[0.2vw]">
-          <div className="w-[0.8vw] h-[0.2vh] bg-green-500"></div>
+          <div className="w-[0.5vw] h-[0.1vh] bg-green-500"></div>
           <span>Ideal</span>
         </div>
         <div className="flex items-center gap-[0.2vw]">
-          <div className="w-[0.8vw] h-[0.2vh] bg-yellow-500"></div>
+          <div className="w-[0.5vw] h-[0.1vh] bg-yellow-500"></div>
           <span>Atenção</span>
         </div>
         <div className="flex items-center gap-[0.2vw]">
-          <div className="w-[0.8vw] h-[0.2vh] bg-red-500"></div>
+          <div className="w-[0.5vw] h-[0.1vh] bg-red-500"></div>
           <span>Crítico</span>
         </div>
       </div>

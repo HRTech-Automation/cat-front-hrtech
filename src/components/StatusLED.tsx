@@ -9,7 +9,7 @@ export default function StatusLED({ status, size = 'md' }: StatusLEDProps) {
   const sizeClasses = {
     sm: 'w-[1vw] h-[1vw] lg:w-[0.8vw] lg:h-[0.8vw] xl:w-[0.6vw] xl:h-[0.6vw]',
     md: 'w-[1.2vw] h-[1.2vw] lg:w-[1vw] lg:h-[1vw] xl:w-[0.8vw] xl:h-[0.8vw]',
-    lg: 'w-[1.5vw] h-[1.5vw] lg:w-[1.2vw] lg:h-[1.2vw] xl:w-[1vw] xl:h-[1vw]'
+    lg: 'w-[1.4vw] h-[1.4vw] lg:w-[1.2vw] lg:h-[1.2vw] xl:w-[1vw] xl:h-[1vw]'
   };
 
   const statusClasses = {

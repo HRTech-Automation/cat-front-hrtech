@@ -43,6 +43,25 @@ body {
   background: #7c3aed;
 }
 
+/* Custom scrollbar for chart legend */
+.chart-legend-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chart-legend-scroll::-webkit-scrollbar-track {
+  background: #4b5563;
+  border-radius: 2px;
+}
+
+.chart-legend-scroll::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 2px;
+}
+
+.chart-legend-scroll::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
 /* Alert popup animation */
 @keyframes slide-in-right {
   from {
