@@ -22,14 +22,14 @@ export default function TemperatureChart({ data, title, height = 300 }: Temperat
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
-        <div className="bg-gray-800 border border-gray-700 p-3 rounded-lg shadow-lg">
-          <p className="font-medium text-white">{`Horário: ${data.fullTime}`}</p>
-          <p className="text-purple-400">
+        <div className="bg-white border border-slate-300 p-3 rounded-lg shadow-lg">
+          <p className="font-medium text-slate-900">{`Horário: ${data.fullTime}`}</p>
+          <p className="text-purple-600">
             {`Temperatura: ${payload[0].value.toFixed(1)}°C`}
           </p>
           <p className={`text-sm ${
-            data.status === 'normal' ? 'text-green-400' :
-            data.status === 'warning' ? 'text-yellow-400' : 'text-red-400'
+            data.status === 'normal' ? 'text-emerald-600' :
+            data.status === 'warning' ? 'text-amber-600' : 'text-red-600'
           }`}>
             Status: {data.status === 'normal' ? 'Normal' :
                     data.status === 'warning' ? 'Atenção' : 'Crítico'}
@@ -41,20 +41,20 @@ export default function TemperatureChart({ data, title, height = 300 }: Temperat
   };
 
   return (
-    <div className="bg-gray-900 border border-gray-800 rounded-lg p-[0.3vh] h-full flex flex-col">
-      <h3 className="font-semibold text-white mb-[0.2vh] flex-shrink-0 text-[1.2vw] lg:text-[1vw] xl:text-[0.8vw]">{title}</h3>
+    <div className="bg-white border border-slate-200 rounded-lg p-[0.3vh] h-full flex flex-col shadow-sm">
+      <h3 className="font-semibold text-slate-900 mb-[0.2vh] flex-shrink-0 text-[1.2vw] lg:text-[1vw] xl:text-[0.8vw]">{title}</h3>
       <div className="flex-1 min-h-0">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#cbd5e1" />
             <XAxis 
               dataKey="time" 
-              stroke="#9ca3af"
+              stroke="#64748b"
               fontSize="0.6vw"
               interval="preserveStartEnd"
             />
             <YAxis 
-              stroke="#9ca3af"
+              stroke="#64748b"
               fontSize="0.6vw"
               domain={[-18, 0]}
               tickFormatter={(value) => `${value}°C`}
@@ -78,13 +78,13 @@ export default function TemperatureChart({ data, title, height = 300 }: Temperat
         </ResponsiveContainer>
       </div>
       
-      <div className="flex justify-center gap-[0.4vw] text-gray-400 flex-shrink-0 text-[0.8vw] lg:text-[0.6vw] xl:text-[0.5vw]">
+      <div className="flex justify-center gap-[0.4vw] text-slate-600 flex-shrink-0 text-[0.8vw] lg:text-[0.6vw] xl:text-[0.5vw]">
         <div className="flex items-center gap-[0.2vw]">
-          <div className="w-[0.5vw] h-[0.1vh] bg-green-500"></div>
+          <div className="w-[0.5vw] h-[0.1vh] bg-emerald-500"></div>
           <span>Ideal</span>
         </div>
         <div className="flex items-center gap-[0.2vw]">
-          <div className="w-[0.5vw] h-[0.1vh] bg-yellow-500"></div>
+          <div className="w-[0.5vw] h-[0.1vh] bg-amber-500"></div>
           <span>Atenção</span>
         </div>
         <div className="flex items-center gap-[0.2vw]">

@@ -1,14 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: #f8fafc;
+  --foreground: #1e293b;
   --primary-purple: #8b5cf6;
   --dark-purple: #7c3aed;
   --light-purple: #a78bfa;
   --purple-50: #f5f3ff;
   --purple-100: #ede9fe;
   --purple-900: #581c87;
+  --card-background: #ffffff;
+  --card-border: #e2e8f0;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
 }
 
 @theme inline {
@@ -30,7 +34,7 @@ body {
 }
 
 .sensor-list-scroll::-webkit-scrollbar-track {
-  background: #374151;
+  background: #e2e8f0;
   border-radius: 3px;
 }
 
@@ -49,17 +53,17 @@ body {
 }
 
 .chart-legend-scroll::-webkit-scrollbar-track {
-  background: #4b5563;
+  background: #e2e8f0;
   border-radius: 2px;
 }
 
 .chart-legend-scroll::-webkit-scrollbar-thumb {
-  background: #6b7280;
+  background: #94a3b8;
   border-radius: 2px;
 }
 
 .chart-legend-scroll::-webkit-scrollbar-thumb:hover {
-  background: #9ca3af;
+  background: #64748b;
 }
 
 /* Alert popup animation */

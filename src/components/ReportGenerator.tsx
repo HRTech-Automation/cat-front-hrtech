@@ -219,12 +219,12 @@ export default function ReportGenerator({ sensors, extendedData, isOpen, onClose
       {/* Modal */}
       {isOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+          <div className="bg-white border border-slate-300 rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-xl">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-semibold text-white">Configurar Relatório</h2>
+              <h2 className="text-xl font-semibold text-slate-900">Configurar Relatório</h2>
               <button
                 onClick={onClose}
-                className="text-gray-400 hover:text-white"
+                className="text-slate-500 hover:text-slate-700"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -233,7 +233,7 @@ export default function ReportGenerator({ sensors, extendedData, isOpen, onClose
             <div className="space-y-6">
               {/* Period Selection */}
               <div>
-                <label className="block text-sm font-medium text-white mb-3">
+                <label className="block text-sm font-medium text-slate-900 mb-3">
                   Período do Relatório
                 </label>
                 <div className="grid grid-cols-3 gap-3">
@@ -244,7 +244,7 @@ export default function ReportGenerator({ sensors, extendedData, isOpen, onClose
                       className={`p-3 rounded-lg border text-sm ${
                         reportOptions.period === value
                           ? 'bg-purple-600 border-purple-500 text-white'
-                          : 'bg-gray-800 border-gray-700 text-gray-300 hover:bg-gray-750'
+                          : 'bg-slate-50 border-slate-300 text-slate-700 hover:bg-slate-100'
                       }`}
                     >
                       {label}
@@ -255,7 +255,7 @@ export default function ReportGenerator({ sensors, extendedData, isOpen, onClose
               
               {/* Content Options */}
               <div>
-                <label className="block text-sm font-medium text-white mb-3">
+                <label className="block text-sm font-medium text-slate-900 mb-3">
                   Conteúdo do Relatório
                 </label>
                 <div className="space-y-3">
@@ -270,14 +270,14 @@ export default function ReportGenerator({ sensors, extendedData, isOpen, onClose
                         ...prev,
                         [option.key]: !prev[option.key as keyof ReportOptions]
                       }))}
-                      className="flex items-center gap-3 w-full p-3 rounded-lg bg-gray-800 border border-gray-700 hover:bg-gray-750 text-left"
+                      className="flex items-center gap-3 w-full p-3 rounded-lg bg-slate-50 border border-slate-300 hover:bg-slate-100 text-left"
                     >
                       {reportOptions[option.key as keyof ReportOptions] ? (
-                        <CheckSquare className="w-5 h-5 text-purple-400" />
+                        <CheckSquare className="w-5 h-5 text-purple-600" />
                       ) : (
-                        <Square className="w-5 h-5 text-gray-400" />
+                        <Square className="w-5 h-5 text-slate-400" />
                       )}
-                      <span className="text-white">{option.label}</span>
+                      <span className="text-slate-900">{option.label}</span>
                     </button>
                   ))}
                 </div>
@@ -285,7 +285,7 @@ export default function ReportGenerator({ sensors, extendedData, isOpen, onClose
               
               {/* Sensor Selection */}
               <div>
-                <label className="block text-sm font-medium text-white mb-3">
+                <label className="block text-sm font-medium text-slate-900 mb-3">
                   Sensores Incluídos
                 </label>
                 <div className="space-y-2 max-h-48 overflow-y-auto">
@@ -293,16 +293,16 @@ export default function ReportGenerator({ sensors, extendedData, isOpen, onClose
                     <button
                       key={sensor.id}
                       onClick={() => toggleSensor(sensor.id)}
-                      className="flex items-center gap-3 w-full p-3 rounded-lg bg-gray-800 border border-gray-700 hover:bg-gray-750 text-left"
+                      className="flex items-center gap-3 w-full p-3 rounded-lg bg-slate-50 border border-slate-300 hover:bg-slate-100 text-left"
                     >
                       {reportOptions.selectedSensors.includes(sensor.id) ? (
-                        <CheckSquare className="w-5 h-5 text-purple-400" />
+                        <CheckSquare className="w-5 h-5 text-purple-600" />
                       ) : (
-                        <Square className="w-5 h-5 text-gray-400" />
+                        <Square className="w-5 h-5 text-slate-400" />
                       )}
                       <div>
-                        <div className="text-white font-medium">{sensor.name}</div>
-                        <div className="text-gray-400 text-sm">{sensor.location}</div>
+                        <div className="text-slate-900 font-medium">{sensor.name}</div>
+                        <div className="text-slate-600 text-sm">{sensor.location}</div>
                       </div>
                     </button>
                   ))}
@@ -313,7 +313,7 @@ export default function ReportGenerator({ sensors, extendedData, isOpen, onClose
             <div className="flex gap-3 mt-6">
               <button
                 onClick={onClose}
-                className="flex-1 px-4 py-3 bg-gray-800 text-gray-300 rounded-lg hover:bg-gray-750 transition-colors"
+                className="flex-1 px-4 py-3 bg-slate-200 text-slate-700 rounded-lg hover:bg-slate-300 transition-colors"
               >
                 Cancelar
               </button>

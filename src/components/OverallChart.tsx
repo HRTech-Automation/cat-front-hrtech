@@ -50,8 +50,8 @@ export default function OverallChart({ sensors }: OverallChartProps) {
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-gray-800 border border-gray-700 p-3 rounded-lg shadow-lg max-w-xs">
-          <p className="font-medium text-white mb-2">{`Horário: ${payload[0]?.payload?.fullTime}`}</p>
+        <div className="bg-white border border-slate-300 p-3 rounded-lg shadow-lg max-w-xs">
+          <p className="font-medium text-slate-900 mb-2">{`Horário: ${payload[0]?.payload?.fullTime}`}</p>
           {payload.map((entry: any, index: number) => (
             <p key={index} className="text-sm" style={{ color: entry.color }}>
               {`${entry.payload[`sensor_${entry.dataKey.replace('sensor_', '')}_name`]}: ${entry.value.toFixed(1)}°C`}
@@ -69,15 +69,15 @@ export default function OverallChart({ sensors }: OverallChartProps) {
       <div className="flex-1 h-full">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#cbd5e1" />
             <XAxis 
               dataKey="time" 
-              stroke="#9ca3af"
+              stroke="#64748b"
               fontSize="0.6vw"
               interval="preserveStartEnd"
             />
             <YAxis 
-              stroke="#9ca3af"
+              stroke="#64748b"
               fontSize="0.6vw"
               domain={[-18, 2]}
               tickFormatter={(value) => `${value}°C`}
@@ -105,13 +105,13 @@ export default function OverallChart({ sensors }: OverallChartProps) {
         </ResponsiveContainer>
         
         {/* Legenda das zonas de temperatura */}
-        <div className="mt-[0.3vh] flex gap-[0.8vw] text-gray-400 text-[0.7vw] lg:text-[0.6vw] xl:text-[0.5vw]">
+        <div className="mt-[0.3vh] flex gap-[0.8vw] text-slate-600 text-[0.7vw] lg:text-[0.6vw] xl:text-[0.5vw]">
           <div className="flex items-center gap-[0.2vw]">
-            <div className="w-[0.6vw] h-[0.1vh] bg-green-500"></div>
+            <div className="w-[0.6vw] h-[0.1vh] bg-emerald-500"></div>
             <span>Ideal (-15°C a -6°C)</span>
           </div>
           <div className="flex items-center gap-[0.2vw]">
-            <div className="w-[0.6vw] h-[0.1vh] bg-yellow-500"></div>
+            <div className="w-[0.6vw] h-[0.1vh] bg-amber-500"></div>
             <span>Atenção (-6°C a -2°C)</span>
           </div>
           <div className="flex items-center gap-[0.2vw]">
@@ -122,29 +122,29 @@ export default function OverallChart({ sensors }: OverallChartProps) {
       </div>
 
       {/* Legenda dos Sensores - Canto Direito */}
-      <div className="w-[15vw] bg-gray-800 border border-gray-700 rounded-lg h-full flex flex-col">
-        <h4 className="text-white font-semibold text-[0.9vw] lg:text-[0.8vw] xl:text-[0.7vw] p-[0.5vh] border-b border-gray-600 flex-shrink-0">
+      <div className="w-[15vw] bg-white border border-slate-200 rounded-lg h-full flex flex-col shadow-sm">
+        <h4 className="text-slate-900 font-semibold text-[0.9vw] lg:text-[0.8vw] xl:text-[0.7vw] p-[0.5vh] border-b border-slate-200 flex-shrink-0">
           Sensores
         </h4>
         <div className="flex-1 overflow-y-auto p-[0.5vh] space-y-[0.3vh] chart-legend-scroll">
           {sensors.map((sensor, index) => (
-            <div key={sensor.id} className="flex items-center gap-[0.4vw] p-[0.3vh] rounded hover:bg-gray-700 transition-colors">
+            <div key={sensor.id} className="flex items-center gap-[0.4vw] p-[0.3vh] rounded hover:bg-slate-50 transition-colors">
               <div 
                 className="w-[1vw] h-[0.2vh] rounded flex-shrink-0" 
                 style={{ backgroundColor: SENSOR_COLORS[index % SENSOR_COLORS.length] }}
               ></div>
               <div className="flex-1 min-w-0">
-                <div className="text-gray-300 text-[0.8vw] lg:text-[0.7vw] xl:text-[0.6vw] font-medium truncate">
+                <div className="text-slate-700 text-[0.8vw] lg:text-[0.7vw] xl:text-[0.6vw] font-medium truncate">
                   {sensor.name}
                 </div>
-                <div className="text-gray-300 text-[0.7vw] lg:text-[0.6vw] xl:text-[0.5vw] truncate">
+                <div className="text-slate-600 text-[0.7vw] lg:text-[0.6vw] xl:text-[0.5vw] truncate">
                   {sensor.location}
                 </div>
               </div>
               <div className="flex items-center gap-[0.2vw] flex-shrink-0">
                 <div className={`text-[0.8vw] lg:text-[0.7vw] xl:text-[0.6vw] font-bold ${
-                  sensor.status === 'normal' ? 'text-green-400' :
-                  sensor.status === 'warning' ? 'text-yellow-400' : 'text-red-400'
+                  sensor.status === 'normal' ? 'text-emerald-600' :
+                  sensor.status === 'warning' ? 'text-amber-600' : 'text-red-600'
                 }`}>
                   {sensor.currentTemperature.toFixed(1)}°C
                 </div>

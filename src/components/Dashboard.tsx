@@ -28,10 +28,10 @@ export default function Dashboard() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
-          <p className="text-gray-400">Carregando dados dos sensores...</p>
+          <p className="text-slate-600">Carregando dados dos sensores...</p>
         </div>
       </div>
     );
@@ -51,7 +51,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-gray-900 border-b border-gray-800 h-[7vh]">
         <div className="max-w-full mx-auto px-0">
@@ -106,35 +106,35 @@ export default function Dashboard() {
               {/* Sidebar com informações da empresa */}
               <div className="w-[20vw] flex flex-col">
                 {/* Card da Empresa - Altura Total */}
-                <div className="bg-gray-900 border border-gray-700 rounded-lg p-[1vh] flex-1 flex flex-col">
+                <div className="bg-white border border-slate-200 rounded-lg p-[1vh] flex-1 flex flex-col shadow-sm">
                   <div className="flex-shrink-0">
-                    <h3 className="text-[1.6vw] lg:text-[1.3vw] xl:text-[1.1vw] font-bold text-white mb-[0.5vh]">
+                    <h3 className="text-[2vw] lg:text-[1.6vw] xl:text-[1.3vw] font-bold text-slate-900 mb-[0.5vh]">
                       HRTemperatura
                     </h3>
-                    <p className="text-gray-400 text-[1.1vw] lg:text-[0.9vw] xl:text-[0.7vw] mb-[2vh]">
+                    <p className="text-slate-600 text-[1.3vw] lg:text-[1.1vw] xl:text-[0.9vw] mb-[2vh]">
                       Sistema de Monitoramento de Câmaras Frias
                     </p>
                   </div>
                   
                   <div className="space-y-[1vh] flex-shrink-0 mb-[2vh]">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-400 text-[1vw] lg:text-[0.8vw] xl:text-[0.7vw]">Sensores Ativos:</span>
-                      <span className="text-white font-medium text-[1.1vw] lg:text-[0.9vw] xl:text-[0.8vw]">{sensors.length}</span>
+                      <span className="text-slate-600 text-[1.2vw] lg:text-[1vw] xl:text-[0.8vw]">Sensores Ativos:</span>
+                      <span className="text-slate-900 font-medium text-[1.3vw] lg:text-[1.1vw] xl:text-[0.9vw]">{sensors.length}</span>
                     </div>
                     
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-400 text-[1vw] lg:text-[0.8vw] xl:text-[0.7vw]">Alertas Críticos:</span>
-                      <span className="text-red-400 font-bold text-[1.1vw] lg:text-[0.9vw] xl:text-[0.8vw]">{critical}</span>
+                      <span className="text-slate-600 text-[1.2vw] lg:text-[1vw] xl:text-[0.8vw]">Alertas Críticos:</span>
+                      <span className="text-red-600 font-bold text-[1.3vw] lg:text-[1.1vw] xl:text-[0.9vw]">{critical}</span>
                     </div>
                     
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-400 text-[1vw] lg:text-[0.8vw] xl:text-[0.7vw]">Alertas de Atenção:</span>
-                      <span className="text-yellow-400 font-bold text-[1.1vw] lg:text-[0.9vw] xl:text-[0.8vw]">{warnings}</span>
+                      <span className="text-slate-600 text-[1.2vw] lg:text-[1vw] xl:text-[0.8vw]">Alertas de Atenção:</span>
+                      <span className="text-amber-600 font-bold text-[1.3vw] lg:text-[1.1vw] xl:text-[0.9vw]">{warnings}</span>
                     </div>
                     
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-400 text-[1vw] lg:text-[0.8vw] xl:text-[0.7vw]">Sensores Normais:</span>
-                      <span className="text-green-400 font-bold text-[1.1vw] lg:text-[0.9vw] xl:text-[0.8vw]">{sensors.length - critical - warnings}</span>
+                      <span className="text-slate-600 text-[1.2vw] lg:text-[1vw] xl:text-[0.8vw]">Sensores Normais:</span>
+                      <span className="text-emerald-600 font-bold text-[1.3vw] lg:text-[1.1vw] xl:text-[0.9vw]">{sensors.length - critical - warnings}</span>
                     </div>
                   </div>
 
@@ -142,8 +142,8 @@ export default function Dashboard() {
                   <div className="flex-1 flex flex-col justify-center">
                     <div className="space-y-[1.5vh]">
                       <div>
-                        <h4 className="text-gray-400 text-[0.9vw] lg:text-[0.7vw] xl:text-[0.6vw] mb-[0.3vh]">Endereço</h4>
-                        <p className="text-white text-[1vw] lg:text-[0.8vw] xl:text-[0.7vw] leading-relaxed">
+                        <h4 className="text-slate-500 text-[1.1vw] lg:text-[0.9vw] xl:text-[0.7vw] mb-[0.3vh]">Endereço</h4>
+                        <p className="text-slate-900 text-[1.2vw] lg:text-[1vw] xl:text-[0.8vw] leading-relaxed">
                           Rua das Indústrias, 1234<br/>
                           Distrito Industrial<br/>
                           São Paulo - SP, 01234-567
@@ -151,23 +151,23 @@ export default function Dashboard() {
                       </div>
                       
                       <div>
-                        <h4 className="text-gray-400 text-[0.9vw] lg:text-[0.7vw] xl:text-[0.6vw] mb-[0.3vh]">Contato</h4>
-                        <p className="text-white text-[1vw] lg:text-[0.8vw] xl:text-[0.7vw]">
+                        <h4 className="text-slate-500 text-[1.1vw] lg:text-[0.9vw] xl:text-[0.7vw] mb-[0.3vh]">Contato</h4>
+                        <p className="text-slate-900 text-[1.2vw] lg:text-[1vw] xl:text-[0.8vw]">
                           (11) 3456-7890<br/>
                           contato@hrtemperatura.com.br
                         </p>
                       </div>
                       
                       <div>
-                        <h4 className="text-gray-400 text-[0.9vw] lg:text-[0.7vw] xl:text-[0.6vw] mb-[0.3vh]">CNPJ</h4>
-                        <p className="text-white text-[1vw] lg:text-[0.8vw] xl:text-[0.7vw]">
+                        <h4 className="text-slate-500 text-[1.1vw] lg:text-[0.9vw] xl:text-[0.7vw] mb-[0.3vh]">CNPJ</h4>
+                        <p className="text-slate-900 text-[1.2vw] lg:text-[1vw] xl:text-[0.8vw]">
                           12.345.678/0001-90
                         </p>
                       </div>
                       
                       <div>
-                        <h4 className="text-gray-400 text-[0.9vw] lg:text-[0.7vw] xl:text-[0.6vw] mb-[0.3vh]">Responsável Técnico</h4>
-                        <p className="text-white text-[1vw] lg:text-[0.8vw] xl:text-[0.7vw]">
+                        <h4 className="text-slate-500 text-[1.1vw] lg:text-[0.9vw] xl:text-[0.7vw] mb-[0.3vh]">Responsável Técnico</h4>
+                        <p className="text-slate-900 text-[1.2vw] lg:text-[1vw] xl:text-[0.8vw]">
                           Eng. João Silva<br/>
                           CREA-SP 123456789
                         </p>
@@ -176,8 +176,8 @@ export default function Dashboard() {
                   </div>
 
                   {/* Informações adicionais na parte inferior */}
-                  <div className="flex-shrink-0 pt-[1vh] border-t border-gray-700">
-                    <div className="text-center text-gray-500 text-[0.8vw] lg:text-[0.6vw] xl:text-[0.5vw]">
+                  <div className="flex-shrink-0 pt-[1vh] border-t border-slate-200">
+                    <div className="text-center text-slate-500 text-[0.8vw] lg:text-[0.6vw] xl:text-[0.5vw]">
                       Última verificação: {new Date().toLocaleTimeString('pt-BR')}
                     </div>
                   </div>
@@ -191,12 +191,12 @@ export default function Dashboard() {
                     <div
                       key={sensor.id}
                       onClick={() => handleSensorSelect(sensor.id)}
-                      className={`bg-gray-900 border rounded-lg p-[0.8vh] cursor-pointer transition-all duration-200 hover:scale-105 aspect-square flex flex-col justify-between ${
+                      className={`bg-white border rounded-lg p-[0.8vh] cursor-pointer transition-all duration-200 hover:scale-105 aspect-square flex flex-col justify-between shadow-sm ${
                         sensor.status === 'critical'
-                          ? 'border-red-500 bg-red-900/20 animate-pulse'
+                          ? 'border-red-400 bg-red-50 animate-pulse'
                           : sensor.status === 'warning'
-                          ? 'border-yellow-500 bg-yellow-900/20 animate-pulse'
-                          : 'border-gray-700 hover:border-purple-500'
+                          ? 'border-amber-400 bg-amber-50 animate-pulse'
+                          : 'border-slate-200 hover:border-purple-400 hover:shadow-md'
                       }`}
                     >
                       <div className="flex items-center justify-between">
@@ -205,25 +205,25 @@ export default function Dashboard() {
                       </div>
                       
                       <div className="text-center flex-1 flex flex-col justify-center">
-                        <h3 className="font-bold text-white text-[1.4vw] lg:text-[1.1vw] xl:text-[0.9vw] mb-[0.3vh] truncate">
+                        <h3 className="font-bold text-slate-900 text-[1.4vw] lg:text-[1.1vw] xl:text-[0.9vw] mb-[0.3vh] truncate">
                           {sensor.name}
                         </h3>
-                        <p className="text-gray-400 text-[1vw] lg:text-[0.8vw] xl:text-[0.6vw] mb-[0.5vh] truncate">
+                        <p className="text-slate-600 text-[1vw] lg:text-[0.8vw] xl:text-[0.6vw] mb-[0.5vh] truncate">
                           {sensor.location}
                         </p>
-                        <div className="text-[2.2vw] lg:text-[1.8vw] xl:text-[1.4vw] font-bold text-white mb-[0.3vh]">
+                        <div className="text-[2.2vw] lg:text-[1.8vw] xl:text-[1.4vw] font-bold text-slate-900 mb-[0.3vh]">
                           {sensor.currentTemperature.toFixed(1)}°C
                         </div>
                         <div className={`text-[1vw] lg:text-[0.8vw] xl:text-[0.6vw] font-medium ${
-                          sensor.status === 'normal' ? 'text-green-400' :
-                          sensor.status === 'warning' ? 'text-yellow-400' : 'text-red-400'
+                          sensor.status === 'normal' ? 'text-emerald-600' :
+                          sensor.status === 'warning' ? 'text-amber-600' : 'text-red-600'
                         }`}>
                           {sensor.status === 'normal' ? 'Normal' :
                            sensor.status === 'warning' ? 'Atenção' : 'Crítico'}
                         </div>
                       </div>
                       
-                      <div className="text-center text-gray-500 text-[0.8vw] lg:text-[0.6vw] xl:text-[0.5vw]">
+                      <div className="text-center text-slate-500 text-[0.8vw] lg:text-[0.6vw] xl:text-[0.5vw]">
                         {sensor.lastUpdate.toLocaleTimeString('pt-BR')}
                       </div>
                     </div>
@@ -233,8 +233,8 @@ export default function Dashboard() {
             </div>
 
             {/* Gráfico Geral - Largura Total */}
-            <div className="bg-gray-900 border-t border-gray-700 p-[0.8vw] h-[35vh] flex-shrink-0">
-              <h3 className="text-[1.4vw] lg:text-[1.2vw] xl:text-[1vw] font-semibold text-white mb-[0.5vh]">
+            <div className="bg-white border-t border-slate-200 p-[0.8vw] h-[35vh] flex-shrink-0 shadow-sm">
+              <h3 className="text-[1.4vw] lg:text-[1.2vw] xl:text-[1vw] font-semibold text-slate-900 mb-[0.5vh]">
                 Monitoramento Geral - Todos os Sensores
               </h3>
               <div className="h-[calc(100%-2vh)]">
@@ -259,18 +259,18 @@ export default function Dashboard() {
               {selectedSensor && (
                 <>
                   {/* Selected Sensor Info */}
-                  <div className="bg-gray-900 border border-gray-800 rounded-lg p-[0.4vh] flex-shrink-0 h-[7vh]">
+                  <div className="bg-white border border-slate-200 rounded-lg p-[0.4vh] flex-shrink-0 h-[7vh] shadow-sm">
                     <div className="flex items-center justify-between h-full">
                       <div>
-                        <h2 className="text-[2.2vw] lg:text-[1.8vw] xl:text-[1.4vw] font-semibold text-white">{selectedSensor.name}</h2>
-                        <p className="text-gray-400 text-[1.4vw] lg:text-[1.1vw] xl:text-[0.9vw]">{selectedSensor.location}</p>
+                        <h2 className="text-[2.2vw] lg:text-[1.8vw] xl:text-[1.4vw] font-semibold text-slate-900">{selectedSensor.name}</h2>
+                        <p className="text-slate-600 text-[1.4vw] lg:text-[1.1vw] xl:text-[0.9vw]">{selectedSensor.location}</p>
                       </div>
                       <div className="flex items-center gap-[0.8vw]">
                         <div className="text-right">
-                          <div className="text-[3vw] lg:text-[2.4vw] xl:text-[2vw] font-bold text-white">
+                          <div className="text-[3vw] lg:text-[2.4vw] xl:text-[2vw] font-bold text-slate-900">
                             {selectedSensor.currentTemperature.toFixed(1)}°C
                           </div>
-                          <div className="text-[1.2vw] lg:text-[1vw] xl:text-[0.8vw] text-gray-400">Temperatura Atual</div>
+                          <div className="text-[1.2vw] lg:text-[1vw] xl:text-[0.8vw] text-slate-600">Temperatura Atual</div>
                         </div>
                         <StatusLED status={selectedSensor.status} size="lg" />
                       </div>
